@@ -1,0 +1,89 @@
+.bg-img{
+    background-image: url('../img/create-story.png');
+    
+    background-repeat: repeat;
+    /* background-size:cover; */
+}
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */  
+  opacity: 0.5!important; /* Firefox */
+}
+
+.fontAwesome {
+    font-family: 'Poppins', 'FontAwesome', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.font1 {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+.margin{
+    margin-top: 7rem;
+}
+
+.padding{
+    padding-top: 4rem;
+}
+
+.font-clr{
+    color:#8752F9;
+}
+
+.border-clr{
+    border-color: #8752F9;
+}
+
+.bg-clr{
+    background-color: #8752F9;
+}
+
+.inline{
+    position: relative;
+    inset-inline-start: 100px;
+}
+
+.ellipsis {
+  max-width: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.expanded {
+  white-space: normal;
+  overflow: auto;
+  text-overflow: clip;
+}
+
+.chart-container {
+  max-width: 450px; /* Adjust this value to your preferred maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+
+@media (max-width: 768px) {
+    /* Gaya CSS untuk layar kecil */
+    /* Misalnya: */
+    .image {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    /* Gaya CSS untuk layar kecil */
+    /* Misalnya: */
+    .image {
+      width: 130%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    /* Gaya CSS untuk layar kecil */
+    /* Misalnya: */
+    .image {
+      width: 70%;
+    }
+  }
