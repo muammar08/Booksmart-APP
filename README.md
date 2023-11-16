@@ -4,9 +4,11 @@ This app is complete with unit tests and E2E tests
 
 How to run it
 
--Composer Install
+-composer Install
 
 -set your env
+
+-php artisan migrate
 
 -php artisan serve
 
