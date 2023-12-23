@@ -18,7 +18,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Booksmart</title>
+    <title>BookSmart</title>
+    <link rel="icon" href="{{ url('img/favicon.ico') }}">
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -93,7 +94,7 @@
     const token = localStorage.getItem("bearer_token");
 
     // Fetch user data
-    fetch('http://localhost:8000/api/get_user', {
+    fetch('/api/get_user', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -118,7 +119,7 @@
     });
 
     // Fetch bookmarks data
-    fetch('http://localhost:8000/api/bookmarks', {
+    fetch('/api/bookmarks', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -274,7 +275,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         // Send delete request to the server
-                        fetch(`http://localhost:8000/api/delete/${bookmarkId}`, {
+                        fetch(`/api/delete/${bookmarkId}`, {
                             method: 'DELETE',
                             headers: {
                                 'Authorization': `Bearer ${token}`,

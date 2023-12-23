@@ -35,11 +35,6 @@ class SocialiteController extends Controller
 
         // Redirect to dashboard
         return redirect('/dashboard')->with(['token' => $token]);
-        // return response()->json([
-        //     'success' => true,
-        //     'redirect' => true,
-        //     'token' => $token,
-        // ]);
     }
 
     public function findOrCreateUser($socialUser, $provider)
