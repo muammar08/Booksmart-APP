@@ -16,7 +16,8 @@ class ApiController extends Controller
         // Validate data
         $data = $request->only('name', 'email', 'password');
         $validator = Validator::make($data, [
-            'name' => ['required', 'string', 'regex:/^[A-Za-z0-9]+$/', 'min:6', 'max:20'],
+            // 'name' => ['required', 'string', 'regex:/^[A-Za-z0-9]+$/', 'min:6', 'max:20'],
+            'name' => ['required', 'string', 'min:6', 'max:20'],
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:6|max:20'
         ]);

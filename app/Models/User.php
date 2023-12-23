@@ -50,4 +50,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany(Bookmark::class);
     }
+
+    public function socialAccounts()
+    {
+        return $this->hasMany(SocialAccount::class);
+    }
 }

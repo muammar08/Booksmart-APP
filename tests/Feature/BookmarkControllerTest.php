@@ -71,7 +71,7 @@ class BookmarkControllerTest extends TestCase
             
             // Send a POST request to the login endpoint
             $response = $this->post('/api/login', [
-                'email' => '1234@gmail.com',
+                'email' => $this->faker->unique()->safeEmail,
                 'password' => '12345678',
             ]);
 
@@ -105,7 +105,7 @@ class BookmarkControllerTest extends TestCase
         $bookmarkData = [
             'title' => $this->faker->words(3, true),
             'url' => $this->faker->url,
-            'platform' => 'Instagram',
+            'platform' => 'Facebook',
             'user_id' => $user->id,
         ];
 
@@ -275,6 +275,14 @@ class BookmarkControllerTest extends TestCase
         $this->assertDatabaseMissing('bookmarks', [
             'id' => $bookmark->id,
         ]);
+    }
+
+    public function test_countplatform(){
+        // Send a GET request to the count platform endpoint
+        $response = $this->get('/api/countPlatform');
+
+        // Assert that the response has a 200 status code (for successful login)
+        $response->assertStatus(200);
     }
 
 

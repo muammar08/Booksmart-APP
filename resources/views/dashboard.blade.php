@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
     <script>
+        // Ambil token dari session
+        const token1 = "{{ session('token') ?? '' }}";
+        if (token1) {
+            localStorage.setItem('bearer_token', token1);
+            // Lakukan tindakan lain jika diperlukan
+        }
+    </script>
+
+    <script>
         if(localStorage.getItem("bearer_token") == null){
         window.location.href = "/login";
     }

@@ -7,7 +7,6 @@
     }
     </script>
 
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Booksmart</title>
@@ -64,7 +63,12 @@
                 <button type="submit" id="confirm" name="confirm" class="btn container mt-4 mb-3 text-white fw-bold" style="background-color:#8752F9;">
                     Confirm
                 </button>
-                <p class="" style="font-size:12px;">Not registered? <a class="font-clr fw-bold" style="text-decoration:none" href="/signup">Create an account</a></p>
+                <p class="mb-0 pb-0" style="font-size:12px;">Not registered? <a class="font-clr fw-bold" style="text-decoration:none" href="/signup">Create an account </a><br>---or---</p>
+                <a href="/auth/google/" id='googleLogin' class="mt-0 pt-0" style="text-decoration:none;"> 
+                    <button class="btn text-dark fontAwesome" style="border:none;">
+                        Login With Google <i class="fa-brands fa-google"></i>
+                    </button>
+                </a>
             </div>
         </form>
     </div>
@@ -90,12 +94,6 @@
                 const token = data.token;
                 localStorage.setItem('bearer_token', token);
                 window.location.href = '/dashboard'; // Arahkan ke halaman dashboard
-            } else if(data.success == false){
-                Swal.fire({
-                    icon: "error",
-                    title: "Email or Password Incorrect",
-                    text: "Something went wrong!",
-                });
             } else {
                 // Jika login gagal, tampilkan pesan kesalahan di halaman login jika ada
                 Swal.fire({
@@ -109,6 +107,19 @@
             console.error('An error occurred:', error);
         });
     });
+
+    document.getElementById('googleLogin').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        try {
+            // Redirect to the Google authentication page
+            window.location.href = '/auth/google/';
+
+        } catch (error) {
+            console.error('An error occurred:', error);
+        }
+    });
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
