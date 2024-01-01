@@ -56,14 +56,17 @@
     fetch(`/api/countPlatform`) // Corrected URL
     .then(response => response.json())
     .then(data => {
+        const labels = Object.keys(data);
+        const values = Object.values(data);
+
         const ctx = document.getElementById('chart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['Facebook', 'Instagram', 'Twitter', 'Youtube', 'Tiktok', 'Telegram', 'Discord', 'Lainnya'],
+                labels: labels,
                 datasets: [{
                     label: 'Bookmark',
-                    data: [data.facebook, data.instagram, data.twitter, data.youtube, data.tiktok, data.telegram, data.discord, data.lainnya],
+                    data: values,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(255, 159, 64, 0.2)',
